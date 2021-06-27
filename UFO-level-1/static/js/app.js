@@ -20,3 +20,11 @@ Object.entries(UFOSightings).forEach(function([key, value]) {
     cell.text(value);
 });
 });
+
+// Make the filter work
+//Start by selecting the button and the filter bar.
+// Select the button
+var button = d3.select("#filter-btn");
+
+// Select the filter
+var form = d3.select("#filters");
