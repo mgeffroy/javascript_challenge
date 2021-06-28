@@ -27,4 +27,8 @@ Object.entries(UFOSightings).forEach(function([key, value]) {
 var button = d3.select("#filter-btn");
 
 // Select the filter
-var form = d3.select("#filters");
+var form = d3.select("#datetime");
+
+//Create event handlers 
+button.on("click", runFilter);
+form.on("submit", runFilter);
