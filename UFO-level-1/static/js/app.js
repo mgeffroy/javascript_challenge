@@ -30,11 +30,11 @@ var button = d3.select("#filter-btn");
 var form = d3.select("#datetime");
 
 //Create event handlers 
-button.on("click", runDate);
-form.on("submit", runDate);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
 // Create runFilter function 
-function runDate() {
+function runEnter() {
     d3.event.preventDefault();
     var 
 }
