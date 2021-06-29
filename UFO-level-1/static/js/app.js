@@ -5,13 +5,13 @@ var tableData = data;
 // Select tbody
 var tbody = d3.select("tbody");
 
-tableData.forEach(function(UFOSightings) {
-    console.log(UFOSightings);
-    // Male table rows 
+tableData.forEach(UFOSightings => {
+   // console.log(UFOSightings);
+    // MaKe table rows 
      var row = tbody.append("tr");
 
-Object.entries(UFOSightings).forEach(function([key, value]) {
-    console.log(key, value);
+Object.entries(UFOSightings).forEach(([key, value]) => {
+   // console.log(key, value);
     
     // Make space for table data 
     var cell = row.append("td");
@@ -39,11 +39,25 @@ function runEnter() {
     d3.event.preventDefault();
     
     // Input variables and value 
-    var inputVal = d3.select(".form-control").property("value");
+    var inputVal = form.property("value");
 
-    // Use form to filter by date
-   var filteredData=  tableData.filter(date=> date.datetime === inputVal);
+ // Use form to filter by date
+   var filteredData=  tableData.filter(ufoDate => ufoDate.datetime === inputVal);
    console.log(filteredData);
+   // Clear tbody 
+   tbody.html("")
 
-    ///Conditional to change the table
+  //// Add new filtered data to the table 
+    filteredData.forEach(UFOSightings => {
+    // Male table rows 
+     var row = tbody.append("tr");
+    Object.entries(UFOSightings).forEach(([key, value]) => {
+    
+    // Make space for table data 
+    var cell = row.append("td");
+    
+    // Add values 
+    cell.text(value);
+});
+});
 }
