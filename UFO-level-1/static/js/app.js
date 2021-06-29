@@ -35,9 +35,15 @@ form.on("submit", runEnter);
 
 // Create runFilter function 
 function runEnter() {
+    /// Prevent page from refreshing
     d3.event.preventDefault();
     
     // Input variables and value 
-    var input = d3.select(".form-control");
-    var value = input.property(value);
+    var inputVal = d3.select(".form-control").property("value");
+
+    // Use form to filter by date
+   var filteredData=  tableData.filter(date=> date.datetime === inputVal);
+   console.log(filteredData);
+
+    ///Conditional to change the table
 }
