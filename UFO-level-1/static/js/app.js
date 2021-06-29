@@ -36,5 +36,8 @@ form.on("submit", runEnter);
 // Create runFilter function 
 function runEnter() {
     d3.event.preventDefault();
-    var 
+    
+    // Input variables and value 
+    var input = d3.select(".form-control");
+    var value = input.property(value);
 }
